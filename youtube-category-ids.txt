@@ -1,0 +1,16 @@
+1	Film & Animation
+2	Autos & Vehicles
+10	Music
+15	Pets & Animals
+17	Sports
+19	Travel & Events
+20	Gaming
+22	People & Blogs
+23	Comedy
+24	How-to & Style
+25	Education
+26	Science & Technology
+27	Nonprofits
+28	Entertainment
+29	News & Politics
+30	Blog
