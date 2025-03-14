@@ -266,11 +266,8 @@ function createExcel(channelName, data) {
 
 async function main() {
   const channelName = "여우튜브";
-  // const data = await scrape(channelName);
-  // createExcel(channelName, data);
-
-  const video = await getVideoDetails("9P3kxfons2E");
-  console.log(video);
+  const data = await scrape(channelName);
+  createExcel(data);
 }
 
 main();
