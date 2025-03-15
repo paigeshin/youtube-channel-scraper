@@ -134,10 +134,12 @@ async function scrape(channelName) {
     try {
       const videoDetail = await getVideoDetails(videoId);
       const replies = await getVideoReplies(videoId);
-      videoDetails.push({
-        video: videoDetail,
-        replies,
-      });
+      if (videoDetail) {
+        videoDetails.push({
+          video: videoDetail,
+          replies,
+        });
+      }
 
       // 각 비디오에 대해 폴더 경로 만들기
       const videoFolderPath = path.join(
@@ -265,7 +267,7 @@ function createExcel(channelName, data) {
 }
 
 async function main() {
-  const channelName = "여우튜브";
+  const channelName = "황금빛말년";
   const data = await scrape(channelName);
   createExcel(data);
 }
