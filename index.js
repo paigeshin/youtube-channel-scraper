@@ -44,7 +44,6 @@ async function getChannelInfo(channelId) {
     return response.data.items[0];
   } catch (error) {
     console.error("Error fetching channel data:");
-    console.log(error.message);
   }
 }
 
@@ -74,6 +73,7 @@ async function getVideoIdsFromChannel(channelId) {
   } catch (error) {
     console.error("Error fetching video ids:");
     console.log(error.message);
+    console.error(error);
   }
 }
 
@@ -267,9 +267,15 @@ function createExcel(channelName, data) {
 }
 
 async function main() {
-  const channelName = "황금빛말년";
-  const data = await scrape(channelName);
-  createExcel(data);
+  // const channelName = "황금빛말년";
+  // const data = await scrape(channelName);
+  // createExcel(data);
+
+  const channelName = "gamdongdream";
+  const channelId = await getChannelId(channelName);
+  console.log(`Channel Id: ${channelId}`);
+  const videoIds = await getVideoIdsFromChannel("UCd1sjFJbeVR5i3IjJ5Q63LA");
+  console.log(videoIds);
 }
 
 main();
